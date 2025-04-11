@@ -28,7 +28,7 @@ const Login = () => {
   
       alert("Login successful!");
       // Redirect to dashboard
-      navigate("/dashboard");
+      navigate("/admin1");
     } catch (error) {
       alert(error.response?.data?.message || "Invalid credentials");
     }

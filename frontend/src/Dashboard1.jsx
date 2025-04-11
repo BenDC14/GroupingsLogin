@@ -8,25 +8,22 @@ const Dashboard1 = () => {
   const [userRole, setRole] = useState("");
 
   useEffect(() => {
-    // Retrieve the user and role from localStorage
+    // Retrieve username and role from localStorage
     const storedUser = localStorage.getItem("username");
     const storedRole = localStorage.getItem("role");
-
-    console.log("Stored User:", storedUser); // Debugging log
-    console.log("Stored Role:", storedRole); // Debugging log
 
     if (storedUser && storedRole) {
       setUser(storedUser);
       setRole(storedRole);
 
-      // If the user is not a staff member, redirect them
-      if (storedRole !== "Staff") {
-        console.log("Not Staff, redirecting to login..."); // Debugging log
-        navigate("/staff2");
+      // If role is not Admin, redirect to the staff page
+    if (storedRole !== "Admin1") {
+        navigate("/staff1");
       }
     } else {
-      console.log("No user or role found, redirecting to login..."); // Debugging log
-
+      // If no user or role found in localStorage, redirect to login
+      console.log("No user or role found, redirecting to login...");
+      navigate("/login");
     }
   }, [navigate]);
 
@@ -40,10 +37,10 @@ const Dashboard1 = () => {
         variant="contained"
         color="secondary"
         onClick={() => {
-          // Clear localStorage and redirect to login
+          // Remove user data from localStorage and redirect to login page
           localStorage.removeItem("token");
           localStorage.removeItem("username");
-          localStorage.removeItem("role");
+          localStorage.removeItem("role"); // Ensure role is also removed
           navigate("/login");
         }}
       >

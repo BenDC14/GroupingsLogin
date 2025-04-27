@@ -22,7 +22,7 @@ const Dashboard3 = () => {
       // If the user is not a staff member, redirect them
       if (storedRole !== "Staff2") {
         console.log("Not Staff2, redirecting to login..."); // Debugging log
-        navigate("/balais");
+        navigate("/bacabac");
       }
     } else {
       console.log("No user or role found, redirecting to login..."); // Debugging log

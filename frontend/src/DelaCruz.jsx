@@ -20,9 +20,8 @@ const Cacho = () => {
       setRole(storedRole);
 
       // If the user is not a staff member, redirect them
-      if (storedRole !== "Student2") {
-        console.log("Not Cacho, redirecting to login..."); // Debugging log
-        navigate("/francisco");
+      if (storedRole !== "DelaCruz") {
+        navigate("/maderia");
       }
     } else {
       console.log("No user or role found, redirecting to login..."); // Debugging log

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Typography, Button } from "@mui/material";
 
-const Balais = () => {
+const Galve = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [userRole, setRole] = useState("");
@@ -20,9 +20,8 @@ const Balais = () => {
       setRole(storedRole);
 
       // If the user is not a staff member, redirect them
-      if (storedRole !== "Student1") {
-        console.log("Not Balais, redirecting to login..."); // Debugging log
-        navigate("/cacho");
+      if (storedRole !== "Oyao") {
+        navigate("/login");
       }
     } else {
       console.log("No user or role found, redirecting to login..."); // Debugging log
@@ -53,4 +52,4 @@ const Balais = () => {
   );
 };
 
-export default Balais;
+export default Galve;
